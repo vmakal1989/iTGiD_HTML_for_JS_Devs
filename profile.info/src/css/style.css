@@ -1,9 +1,23 @@
-* {
-  margin: 0;
+body {
+  font-size: 16px;
+}
+.body-bg {
+  background-image: url("../images/bois-texture-1456353976vDQ.jpg");
+
+}
+.cv {
+  margin-top: 50px;
+  border: 1px solid #4b4b4b;
+  box-shadow: 1px 1px 10px #000;
 }
 
-.one {
-  width: 100px;
-  height: 100px;
-  border: 1px solid red;
+.cv-left {
+  background: #4b4b4b;
+  height: 30vh;
+  color: #fff;
+}
+
+.cv-right {
+  background: #fff;
+  height: 30vh;
 }

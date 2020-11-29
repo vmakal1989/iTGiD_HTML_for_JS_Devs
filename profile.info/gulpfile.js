@@ -26,13 +26,23 @@ function clear() {
 // CSS 
 
 function css() {
-    const source = './src/css/style.css';
+    const source = './src/css/*.css';
 
     return src(source)
         .pipe(changed(source))
         .pipe(cssnano())
         .pipe(dest('./build/css/'))
         .pipe(browsersync.stream());
+}
+
+// js
+
+function js() {
+    return src('./src/js/*')
+        .pipe(changed('./src/js/*'))
+        .pipe(dest('./build/js/'))
+        .pipe(browsersync.stream());
+
 }
 
 // Optimize images
@@ -57,6 +67,7 @@ function watchFiles() {
     watch('./src/css/*', css);
     watch('./src/*.html', html);
     watch('./src/images/*', img);
+    watch('./src/js/*', js);
 }
 
 // BrowserSync
@@ -71,4 +82,4 @@ function browserSync() {
 }
 
 exports.watch = parallel(watchFiles, browserSync);
-exports.default = series(clear, parallel(html, css, img));
+exports.default = series(clear, parallel(html, css, img, js));
