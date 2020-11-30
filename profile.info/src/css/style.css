@@ -13,11 +13,26 @@ body {
 
 .cv-left {
   background: #4b4b4b;
-  height: 30vh;
   color: #fff;
 }
 
 .cv-right {
   background: #fff;
-  height: 30vh;
+}
+
+.contacts ul {
+  list-style-type: none;
+  line-height: 175%;
+  text-align: center;
+  padding-left: 0;
+}
+
+.contacts a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.address {
+  font-style: italic;
+  margin: 0 auto;
 }
